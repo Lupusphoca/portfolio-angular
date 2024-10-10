@@ -1,0 +1,16 @@
+<div class="project-grid">
+    @for (project of projects; track project) {
+      <div class="project-item" 
+           [ngClass]="{'format-16-9': project.format === '16:9', 'format-9-16': project.format === '9:16'}"
+           (click)="onClickProject(project.id)">
+        <div class="project-image" [style.background-image]="'url(' + project.imageUrl + ')'">
+          <div class="overlay">
+            <div class="project-info">
+              <h3>{{ project.name }}</h3>
+              <p>{{ project.date }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>

@@ -1,0 +1,20 @@
+@if (project) {
+<div class="project-detail">
+    <h1>{{ project.name }}</h1>
+    <p>Date de réalisation : {{ project.date }}</p>
+
+    <div class="project-image">
+        <img [src]="project.imageUrl" alt="{{ project.name }}">
+    </div>
+
+    <div class="project-description">
+        <p>Voici quelques détails supplémentaires sur le projet {{ project.name }}. Cette section peut contenir des
+            informations supplémentaires ou un lien vers une démonstration.</p>
+    </div>
+</div>
+} @else {
+<div class="error-message">
+    <h2>Projet non trouvé</h2>
+    <p>Le projet que vous cherchez n'existe pas. Veuillez revenir à la page principale.</p>
+</div>
+}
