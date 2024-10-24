@@ -1,33 +1,36 @@
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(4, 1fr); // 4 colonnes de taille égale
+    grid-auto-rows: 300px; // Hauteur fixe pour chaque ligne
+    gap: 20px; // Espacement régulier entre les projets
+    padding : 20px;
 }
 
 .project-item {
     position: relative;
+    overflow: hidden; // Pour croper les images si nécessaire
+    border-radius: 4px;
     cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
-    &.format-16-9 {
-        grid-column: span 2;
-        aspect-ratio: 16 / 9;
+    &.case-1{
+        grid-column: span 1;
     }
 
-    &.format-9-16 {
-        grid-column: span 1;
-        aspect-ratio: 9 / 16;
+    &.case-2 {
+        grid-column: span 2;
     }
 
     .project-image {
-        background-size: cover;
-        background-position: center;
-        position: relative;
-        height: 100%;
         width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
+        height: 100%;
+        background-size: cover; // Remplir tout le bloc
+        background-position: center; // Centrer l'image dans le bloc
+        transition: transform 0.3s ease-in-out;
+
+        &:hover {
+            transform: scale(1.05); // Effet zoom au survol
+        }
 
         .overlay {
             position: absolute;
@@ -44,6 +47,10 @@
                 text-align: center;
                 opacity: 0;
                 transition: opacity 0.3s ease-in-out;
+                position: absolute;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
             }
         }
 

@@ -16,7 +16,7 @@ export class ProjectDetailComponent {
     private projectService: ProjectService
   ) {
     // Récupération de l'ID du projet dans l'URL
-    const projectId = Number(this.route.snapshot.paramMap.get('id'));
-    this.project = this.projectService.getProjects().find(p => p.id === projectId);
+    const projectId = this.route.snapshot.paramMap.get('id');
+    this.project = this.projectService.getProjectsInfo().find(p => p.id === projectId);
   }
 }

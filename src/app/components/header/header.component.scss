@@ -11,26 +11,23 @@
     align-items: center;
     padding: 0 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
 
-    .logo {
-        cursor: pointer;
-
-        img {
-            height: 40px;
-        }
-    }
-
-    .name {
-        font-size: 24px;
-        font-weight: bold;
-        text-align: center;
-    }
-
-    .actions {
+    .left-section {
         display: flex;
         align-items: center;
+        flex: 1; // Prend l'espace restant sur la gauche
 
-        button {
+        .logo {
+            cursor: pointer;
+            margin-right: 20px;
+
+            img {
+                height: 40px;
+            }
+        }
+
+        .experiences {
             background: none;
             border: none;
             color: white;
@@ -38,14 +35,27 @@
             font-size: 18px;
             margin-right: 20px;
         }
+    }
 
-        .social-links {
-            display: flex;
-            gap: 10px;
+    .name {
+        position: absolute; // Position absolue pour centrer le nom
+        left: 50%;
+        transform: translateX(-50%); // Translate de moitié pour centrer parfaitement
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+    }
 
-            a img {
-                height: 25px;
-            }
+    .social-links {
+        display: flex;
+        align-items: center;
+        padding-right: 40px;
+        flex: 1; // Prend l'espace restant sur la droite
+        justify-content: flex-end; // Ancre à droite
+        gap: 20px;
+
+        a img {
+            height: 20px;
         }
     }
 }

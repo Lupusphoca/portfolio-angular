@@ -1,0 +1,15 @@
+{
+    "project-showcase": {
+        "id": "rushline",
+        "name": "Rushline : Hikokawa Ascend",
+        "note": "Jeu en VR (Réalité Virtuelle) de 4v4 développé pour une salle d'arcade.",
+        "imageUrl": "",
+        "type": "details",
+        "case": 2
+    },
+    "project-details": {
+        "images": [
+            "asset"
+        ]
+    }
+}
